@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Video Transmition{% endblock %}
+
+{% block body %}
+<div class="container">
+
+<div class="row">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>WebRTC Media Capture and Streams API</strong> Escritorio: FireFox,Chrome,Edge. Móvil: Iphone 5s, IOS 12.4.6 video local
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+
+  <div class="row">
+    <button id="id_listar" type="button" class="btn btn-primary">Listar</button>
+  </div>
+  <div class="row">
+    <button id="id_iniciar" type="button" class="btn btn-primary">Iniciar</button>
+  </div>  
+
+  <div class="row">
+    <button id="btn_pausa" type="button" class="btn btn-primary">Pausar</button>
+  </div>  
+  <div class="row">
+    <button id="btn_diagnostico" type="button" class="btn btn-primary">Diagnóstico</button>
+  </div>  
+
+  <div class="row">
+    <div id="constraintList">
+    </div>
+  </div>
+  <div class="row" style="border">
+    <video src="" id="video" ></video>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <textarea id="txtArea_diagnostico" class="form-control" rows="3"></textarea>
+      </div>          
+    </div>
+    
+  </div>
+
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('videoHtml5') }}
+{% endblock %}

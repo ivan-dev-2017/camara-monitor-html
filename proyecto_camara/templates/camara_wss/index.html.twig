@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Camara Wss{% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <div class="row">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>TLS compatible solo con browsers Android, IOS error de certificado para wss</strong>
+            <strong>Cliente Websocket Camara - Node JS servidor</strong> 
+            <strong>Para desarrollo local agregar el certificado navegando hacia: https://192.168.1.2:8443 y añadir excepción</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group">
+            <input id="txt_ip_servidor_ws" type="text" class="form-control" value="192.168.1.3:8443" placeholder="192.168.1.3:8443">
+            </div>         
+        </div>      
+
+        <div class="col-md-4">
+            <button id="btn_transmitir" type="button" class="btn btn-primary">Trasmitir</button>
+            </div>          
+        </div>
+    </div>
+   
+
+    <div class="row" style="margin-top: 100px;">
+        <div class="col-md-4 offset-md-1">
+            <video id="video_uno" style="width: 300px !important;height: 225px !important;" class="img-thumbnail"></video>
+        </div> 
+        <div class="col-md-7">
+            <canvas id="canvas_uno" style="width: 300px !important;height: 225px !important;" class="img-thumbnail"></canvas>
+        </div>         
+    </div>
+ 
+
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('camara_wss') }}
+{% endblock %}
+

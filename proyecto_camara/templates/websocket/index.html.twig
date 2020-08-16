@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WebsocketController!{% endblock %}
+
+{% block body %}
+<div class="container">
+
+<div class="row">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Websocket Cliente - Node JS servidor</strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-4">
+        <div class="input-group">
+        <input id="txt_ip_servidor_ws" value="172.31.0.2:8080" type="text" class="form-control" placeholder="172.31.0.2:8080">
+        </div>         
+    </div>  
+    <div class="col-md-4">
+        <button id="id_iniciar_conexion" type="button" class="btn btn-primary">Conectar Ws</button>
+    </div>  
+    
+  </div>
+
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('websocket') }}
+{% endblock %}

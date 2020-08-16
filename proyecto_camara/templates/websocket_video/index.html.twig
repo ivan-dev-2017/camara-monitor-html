@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}websocket_video{% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <div class="row">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Websocket Cliente - Node JS servidor</strong> browser: https://192.168.1.2:8443/
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-4">
+        <div class="input-group">
+        <input id="txt_ip_servidor_ws" value="192.168.1.2:8443" type="text" class="form-control" placeholder="192.168.1.3:8443">
+        </div>         
+    </div>  
+    <div class="col-md-4">
+        <button id="id_iniciar_conexion" type="button" class="btn btn-primary">Conectar Ws</button>
+    </div>  
+    <div class="col-md-4">
+        <button id="btn_enviar_numeros_azar" type="button" class="btn btn-primary">Enviar números al azar</button>
+    </div>     
+
+    <div class="col-md-4">
+        <button id="btn_transmitir" type="button" class="btn btn-primary">Trasmitir</button>
+    </div>     
+
+    <div class="col-md-4">
+        <button id="id_iniciar_camara" type="button" class="btn btn-primary">Iniciar Camara</button>
+    </div>      
+    </div>
+
+  <div class="row">
+    <button id="id_listar" type="button" class="btn btn-primary">Listar</button>
+  </div>
+  <div class="row">
+    <button id="id_iniciar" type="button" class="btn btn-primary">Iniciar</button>
+  </div>  
+
+  <div class="row">
+    <button id="btn_pausa" type="button" class="btn btn-primary">Pausar</button>
+  </div>  
+  <div class="row">
+    <button id="btn_diagnostico" type="button" class="btn btn-primary">Diagnóstico</button>
+  </div>  
+
+  <div class="row">
+    <div id="constraintList">
+    </div>
+  </div>
+  <div class="row" style="border">
+    <div class="col-md-4">
+      <video id="video_uno" ></video>
+    </div> 
+  </div>
+
+  <div class="row" style="border">
+    <div class="col-md-4">
+      <canvas id="canvas_uno" ></canvas>
+    </div>    
+  </div>  
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <textarea id="txtArea_diagnostico" class="form-control" rows="3"></textarea>
+      </div>          
+    </div>
+    
+  </div>
+
+</div>
+
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('websocket_video') }}
+{% endblock %}
+
